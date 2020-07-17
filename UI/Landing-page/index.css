@@ -1,0 +1,97 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+}
+body{
+	background-color: #605E5E;
+	margin: 0; 
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 66px;
+  background-color: #393535;
+  height: 100%; /* Full height */
+  position: fixed; /* Make it stick, even on scroll */
+  overflow: scroll; /* Enable scrolling if the sidenav has too much content */
+}
+
+.my-landing-photo{
+	position: fixed;
+	width: auto;
+	height: 330px;
+	margin:	200px 10px 200px 100px;
+
+}
+.block{
+	position: fixed;
+	line-height: 90px;
+	margin-left: 460px;
+	margin-top: 180px;
+	font-size: 50px;
+	/*font-weight: bold;*/
+	text-align: left;
+
+}
+.white-color{
+	color: white;
+}
+.span-one{
+	text-transform: capitalize;
+	color:rgba(195, 17, 239,0.35);
+
+
+}
+.icons{
+	
+	margin: 15px;
+}
+.home-icon{
+	margin-top: 50px;
+}
+.icons:hover{
+	background-color: lightblue;
+	
+}
+
+.my-brand-name a{
+	width: 66px;
+	background-color: #141414;
+	position: relative;
+	display: block;
+
+}
+a{
+	text-decoration: none;
+}
+.social-links{
+	margin: 15px;
+	
+
+}
+
+.start-social-links{
+	margin-top: 50px;
+}
+.end-social-links{
+	margin-bottom: 100px;
+}
+.anchor{
+	color: #13F8CE;
+	border: 3px solid ;
+	border-color: #13F8CE;
+	padding: 10px;
+	border-radius: 15px;
+	text-align: center;
+	font-size: 18px;
+
+}
+
+.letter{
+	margin-left: 950px;
+	padding: 10px;
+	width: 450px;
+	position: fixed;
+	display: block;
+}
