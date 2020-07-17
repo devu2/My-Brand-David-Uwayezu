@@ -26,10 +26,10 @@ ul {
 }
 .block{
 	position: fixed;
-	line-height: 100px;
+	line-height: 90px;
 	margin-left: 400px;
 	margin-top: 180px;
-	font-size: 64px;
+	font-size: 60px;
 	/*font-weight: bold;*/
 	text-align: left;
 
@@ -48,7 +48,7 @@ ul {
 	margin: 15px;
 }
 .home-icon{
-	margin-top: 130px;
+	margin-top: 50px;
 }
 .icons:hover{
 	background-color: lightblue;
@@ -72,10 +72,10 @@ a{
 }
 
 .start-social-links{
-	margin-top: 130px;
+	margin-top: 50px;
 }
 .end-social-links{
-	margin-bottom: 30px;
+	margin-bottom: 100px;
 }
 .anchor{
 	color: #13F8CE;
@@ -84,6 +84,8 @@ a{
 	padding: 10px;
 	border-radius: 15px;
 	text-align: center;
+	font-size: 18px;
+
 }
 
 .letter{
