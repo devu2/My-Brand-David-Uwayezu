@@ -19,17 +19,17 @@ ul {
 
 .my-landing-photo{
 	position: fixed;
-	width: 210px;
-	height: 315px;
+	width: auto;
+	height: 330px;
 	margin:	200px 10px 200px 100px;
 
 }
 .block{
 	position: fixed;
 	line-height: 90px;
-	margin-left: 400px;
+	margin-left: 460px;
 	margin-top: 180px;
-	font-size: 60px;
+	font-size: 50px;
 	/*font-weight: bold;*/
 	text-align: left;
 
