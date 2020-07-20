@@ -7,20 +7,15 @@
 body{
 	background-color: #146153!important;
 	text-align: center;
-	/*background-image: url(rain.png);*/
-	/*height: 100vh;*/
-	/*animation: rain .3s linear  infinite;*/
+	
 }
-/*@keyframes rain{
-	from{
-		background-position: 0%,0%;
-
+@media(max-width: 1200px){
+	.contact-me{
+		margin-right: 850px;
 	}
-	to{
-		background-position: 30%,100%;
 
-	}
-}*/
+}
+
 h1{
 	color: #13F8CE;
 	padding: 50px;
@@ -47,19 +42,15 @@ h1:hover{
 }
 .contact-Me{
 	
-	/*position: block;
-	height:100%;	
-	width: 100%;*/
 	border-radius: 5px;
 	background: #605E5E;
 	border: 1px solid;
 	border-color: #605E5E;
 	padding: 40px;
 	margin-right: 650px;
-	/*margin-bottom: 10px;*/
 	display: block;
 	height: 100%;
-	position: absolute;s
+	position: fixed;
 
 }
 input[type=text], textarea, input[type=email]{
@@ -105,6 +96,13 @@ textarea{
     letter-spacing: 3px;
     margin-right: 420px;
 
+}
+button:hover, p:hover{
+	color: skyblue;
+
+}
+button:hover{
+	background-color: black;
 }
 
 
