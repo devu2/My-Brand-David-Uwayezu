@@ -82,30 +82,7 @@ body{
 
 
 
-/* .my-landing-photo{
-	position: fixed;
-	width: auto;
-	height: 350px;
-	margin:	120px ;
-	cursor: pointer;
-	
 
-} */
-/* .my-landing-photo:hover {
-	animation: bounce 1s linear;
-
-} */
-/* @keyframes bounce{
-	20%,50%,80%,to{
-		transform: translateY(0);
-	}
-	40%{
-		transform: translateY(-100px);
-	}
-	70%{
-		transform: translateY(-50px);
-	}
-} */
 .block{
 	position: fixed;
 	line-height: 90px;
