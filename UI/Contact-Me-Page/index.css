@@ -1,0 +1,201 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	list-style-type: none;
+	text-decoration: none;
+}
+body{
+	background-color: #605E5E;
+	margin: 0; 
+	padding: 0;
+	height: 100%;
+	/*background-image: url(rain.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	animation: rain .3s linear infinite;*/
+}
+.rain-div{
+	width: 100%;
+	height: 100vh;
+
+}
+.rain{
+	height: 100vh;
+	margin-left: 980px;
+	background-image: url(Capture.jpg);
+	animation: rain 10s linear infinite;
+}
+@keyframes rain {
+	from{background-position: 0% 0%;}
+	to{background-position: 30% 100%;}
+}
+.sider-bar{
+	position: fixed;
+	left: 0;
+	z-index: 1;
+	width: 66px;
+	height: 100%;
+	background: #393535;
+	overflow: hidden;
+	
+	
+}
+.sider-bar  ul a {
+	display: block;
+	height: 100%;
+	width: 100%;
+	line-height: 40px;
+	/*font-size: 14px;*/
+	color: white;
+	/*padding: -5px;*/
+}
+.active,.sider-bar  ul a:hover{
+	color: #13F8CE;
+
+}
+
+
+
+
+/*ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 66px;
+  background-color: #393535;
+  height: 100%;
+  position: fixed;  
+  overflow: scroll; 
+}*/
+
+.my-landing-photo{
+	position: fixed;
+	width: auto;
+	height: 350px;
+	margin:	120px ;
+	cursor: pointer;
+	
+
+}
+.my-landing-photo:hover {
+	animation: bounce 1s linear;
+
+}
+@keyframes bounce{
+	20%,50%,80%,to{
+		transform: translateY(0);
+	}
+	40%{
+		transform: translateY(-100px);
+	}
+	70%{
+		transform: translateY(-50px);
+	}
+}
+.block{
+	position: fixed;
+	line-height: 90px;
+	margin-left: 485px;
+	margin-top: 100px;
+	font-size: 50px;
+	/*/*font-weight: bold;*/
+	text-align: left;
+
+
+}
+@media (max-width: 1200px) {
+		.block{
+			font-size: 14px;
+			margin-left: 120px;
+			line-height: 35px;
+			margin-top: 250px;
+			
+
+		}
+		.my-landing-photo{
+			width: auto;
+			height: 100px;
+		}
+		.anchor{
+			font-size: 14px;
+			padding: 5px;
+			border: 1px solid;
+			border-radius: 5px;
+		}
+		.rain{
+			margin-left: 300px;
+		}
+		
+		
+	}
+.white-color{
+	color: white;
+
+}
+.white-color:hover{
+	color: #13F8CE;
+
+}
+.span-one{
+	text-transform: capitalize;
+	color:rgba(195, 17, 239,0.35);
+
+
+}
+
+.icons:hover{
+	background-color: #13F8CE;
+	
+}
+
+.my-brand-name a{
+	width: 66px;
+	background-color: #141414;
+	position: relative;
+	display: block;
+
+}
+
+.anchor{
+	color: #13F8CE;
+	border: 3px solid ;
+	border-color: #13F8CE;
+	padding: 10px;
+	border-radius: 15px;
+	text-align: center;
+	font-size: 18px;
+	transition: transform .2s;
+
+}
+.anchor:hover{
+	background-color: #13F8CE;
+	color: black;
+	
+}
+
+/*.letter{
+	margin-left: 1000px;
+	color: white;
+	font-size: 400px;
+	text-transform: capitalize;
+	text-shadow: 2px 2px 5px red;
+	padding: 70px;
+	position: fixed;
+	text-align: center;	
+	/*width: 30%;
+	height: auto;*/
+	/*animation-name: letter;
+	animation-duration: 10s;
+	
+}*/
+/**/
+
+@keyframes letter{
+	0%   {left:0px; top:0px;}
+	25%  {left:10px; top:0px;}
+	50%  {left:100px; top:200px;}
+	75%  {left:0px; top:200px;}
+	100% {left:0px; top:0px;}
+
+}
