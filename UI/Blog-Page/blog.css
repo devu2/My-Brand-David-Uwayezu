@@ -5,3 +5,34 @@
 body{
 	background-color: white;
 }
+.navs ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgb(218, 19, 224);
+  }
+  .navs ul li{
+	  float: left;
+	  /* margin-right: 100px; */
+	  margin-left: 200px;
+  }
+  .navs ul li a {
+	display: block;
+	color: white;
+	text-align: left;
+	padding: 14px 16px;
+	text-decoration: none;
+  }
+  .navs ul li a:hover {
+	background-color: blue;
+  }
+  /* .active {
+	background-color: #4CAF50;
+  } */
+  .navs ul li {
+	border-right: 1px solid white;
+  }
+  .navs ul li:last-child {
+	border-right: none;
+  }
