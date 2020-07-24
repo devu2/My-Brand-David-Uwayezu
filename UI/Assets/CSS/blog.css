@@ -5,22 +5,27 @@
 body{
 	background-color: white;
 }
-.navs ul {
+.navs {
+	overflow: hidden;
+	background-color: rgb(218, 19, 224);
+  }
+/* .navs ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 	background-color: rgb(218, 19, 224);
-  }
-  .navs ul li{
-	  float: left;
+  } */
+  /* .navs ul li{
+	  
 	  /* margin-right: 100px; */
 	  margin-left: 150px;
-  }
+  } */
   .navs ul li a {
+	float: left;
 	display: block;
 	color: white;
-	text-align: left;
+	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
   }
