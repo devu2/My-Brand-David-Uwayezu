@@ -7,6 +7,7 @@
 body{
 	background-color: #146153!important;
 	text-align: center;
+	/* margin-left: 90px; */
 	
 }
 @media(max-width: 1200px){
@@ -15,42 +16,13 @@ body{
 		margin: 0;
 		
 	}
-	.button{
-		margin-right: -100px;
+	.contact-form button{
+		text-align: center;
+		margin-right: -250px;
 	}
+		
 	
-	h1, p{
-		margin-left: 100px;
-
-
-	}
-	.name, .email{
-		width: 10%;
-	}
-	.name{
-		margin-left: 50px;
-	}
-	.email{
-		margin-left: -100px;
-	}
-	.subject{
-		width: 20px;
-		margin-left: 50px;
-		
-	}
-	textarea{
-		width: 20%;
-		margin-left: -50px;
-	}
-	.contact-form input{
-		margin-right: 100px;
-	}
-	p{
-		line-height: 10px;
-		font-size: 16px;
-		
-		
-	}
+	
 	
 	
 
@@ -67,7 +39,7 @@ p{
 	text-align: center;
 	margin-bottom: 20px;
 	font-style: bold;
-	font-size: 24px;
+	font-size: 2.5vw;
 	
 }
 h1:hover{
@@ -88,6 +60,7 @@ h1:hover{
 
 input[type=text], textarea, input[type=email]{
 	background-color: #201D1D;
+	
 }
 
 .name, .email{
@@ -96,13 +69,14 @@ input[type=text], textarea, input[type=email]{
 }
 .subject{
 	margin-top: 10px;
-	width: 40%;
+	width: 42%;
 	padding: 10px;
+	margin-left: 0;
 }
 
 textarea{
 	
-	width: 40%;
+	width: 44%;
 	padding: 50px;
     border: none;
     border-radius: 4px;
@@ -116,7 +90,7 @@ textarea{
 	background-color: #146153;
 	border: 3px solid #13F8CE;
 	border-radius: 4px;
-    /* cursor: pointer; */
+    cursor: pointer;
     float: right;
 	text-transform: uppercase;
 	letter-spacing: 3px;

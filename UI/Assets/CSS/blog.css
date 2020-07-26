@@ -1,7 +1,7 @@
-*{
+/* *{
 	margin: 0;
 	padding: 0;
-}
+} */
 body{
 	background-color: white;
 }
@@ -9,38 +9,52 @@ body{
 	overflow: hidden;
 	background-color: rgb(218, 19, 224);
   }
-/* .navs ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: rgb(218, 19, 224);
-  } */
-  /* .navs ul li{
-	  
-	  /* margin-right: 100px; */
-	  margin-left: 150px;
-  } */
-  .navs ul li a {
-	float: left;
-	display: block;
+.navs a {
 	color: white;
 	text-align: center;
+	font-size: 17px;
+	float: left;
+	display: block;
 	padding: 14px 16px;
 	text-decoration: none;
+	overflow: hidden;
+	/* background-color: rgb(218, 19, 224); */
+	margin-left: 90px;
   }
-  .navs ul li a:hover {
-	background-color: blue;
+     
+  .navs a:hover {
+	background-color: lightblue;
   }
-  /* .active {
+  .navs a.active {
 	background-color: #4CAF50;
-  } */
-  .navs ul li {
-	border-right: 1px solid white;
+	color: black;
   }
-  .navs ul li:last-child {
-	border-right: none;
+  .navs .icon{
+	  display: none;
   }
+  
+  @media screen and (max-width: 600px) {
+	.navs a:not(:first-child) {display: none;}
+	.navs a.icon {
+	  float: right;
+	  display: block;
+	}
+  }
+
+  @media screen and (max-width: 600px) {
+	.navs.responsive {position: relative;}
+	.navs.responsive .icon {
+	  position: absolute;
+	  right: 0;
+	  top: 0;
+	}
+	.navs.responsive a {
+	  float: none;
+	  display: block;
+	  text-align: left;
+	}
+  }
+
   .our-blog{
 	  margin-left: 100px;
 	  /* margin-top: 20px; */

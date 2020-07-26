@@ -1,0 +1,114 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+@media (max-width: 1200px){
+    body{
+        font-size: x-large;
+        
+    }
+    
+}
+
+.p-skills{
+	padding: 100px 15px;
+    background: #ffffff;
+    margin-left: 120px;
+
+}
+.p-skills .p-skills-content{
+	
+	flex: 0 0 50%;
+	max-width: 50%;
+	padding-right: 30px;
+
+}
+
+
+.align-contents-center{
+	align-items: center;
+
+}
+
+
+
+.p-skills .p-skills-content .section-title p{
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 22px;
+	color: #9211bd;
+	margin: 18px 0 13px;
+
+}
+
+.p-skills .p-skills-content .p-skills-box{
+	flex: 0 0 100%;
+	max-width: 100%;
+	margin-bottom: 10px;
+}
+
+.p-skills .p-skills-content .p-skills-box h5{
+	font-size: 22px;
+	font-weight: bold;
+	color: currentColor;
+	margin: 0 0 4px;
+
+}
+
+.p-skills .p-skills-content .p-skills-box .p-skills-bar{
+	height: 6px;
+	background-color: #edaded;
+	position: relative;
+}
+
+.p-skills .p-skills-content .p-skills-box .p-skills-bar .p-skills-bar-in{
+	background-color: #2fedb4;
+	position: absolute;
+	left: 0px;
+	top: 0;
+	height: 100%
+}
+
+.p-skills .p-skills-content .p-skills-box .p-skills-bar .p-skills-bar-in span{
+	color: currentColor;
+	font-size: 12px;
+	font-weight: italic;
+	position: absolute;
+	right:  0;
+	bottom:  15px;
+}
+
+.my-work{
+	background-color: #286352;
+	color: orange;
+}
+
+.portfolio{
+	display: grid;
+	grid-template-columns: repeat(auto,minmax(600px,1fr));
+
+}
+
+.portfolio__item{
+	
+	overflow: hidden;
+
+}
+
+.portfolio__image{
+	transition: 
+		transform 0.8s cubic-bezier(.5, 0, .5,1),
+		opacity 0.25s linear;
+	width: 100% ;	
+
+}
+
+.portfolio__image:hover{
+	transform: scale(1.2);
+	opacity: .25;
+}
