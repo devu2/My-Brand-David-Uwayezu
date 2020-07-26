@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User settings</title>
     <link rel="stylesheet" type="text/css" href="../Assets/CSS/index.css">
-    <link rel="stylesheet" type="text/css" href="../Assets/CSS/p.css">
+	<link rel="stylesheet" type="text/css" href="../Assets/CSS/p.css">
+	<link rel="stylesheet" type="text/css" href="../Assets/CSS/blog.css">
     <script src="https://kit.fontawesome.com/de5b2b25e1.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -40,15 +41,27 @@
 				<a href="../Blog-Page/blog.html"><p id="wall">Wall </p></a>	 
 				
 			</div>
-            <div class="navs">
-				<ul>
-					<li><a href="#" class="active">Personal Information</a></li>
-					<li><a href="#">Create Article</a></li>
-					<li><a href="#">View your articles</a></li>
-					<li><a href="#">Update article</a></li>
-					<li><a href="#">Delete Article</a></li>
-				</ul>
+            
+			<div class="navs" id="my-navs">
+				<a href="../Blog-Page/signup.html" class="active">Personal Information</a>
+				<a href="../Blog-Page/signin.html" >Create Article</a>
+				<a href="#" >Update article</a>
+				<a href="#">Delete Article</a>
+				
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				  <i class="fa fa-bars"></i>
+				</a>
 			</div>
+			<script>
+				function myFunction() {
+				  var x = document.getElementById("my-navs");
+				  if (x.className === "navs") {
+					x.className += " responsive";
+				  } else {
+					x.className = "navs";
+				  }
+				}
+			</script>
         </section>
     </main>
     
