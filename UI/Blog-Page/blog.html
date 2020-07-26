@@ -62,6 +62,57 @@
 				  }
 				}
 			</script>
+			<script>
+				function myFunction() {
+				  var dots = document.getElementById("dots-for-more");
+				  var moreText = document.getElementById("read-more");
+				  var btnText = document.getElementById("myReadMoreBtn");
+				
+				  if (dots.style.display === "none") {
+					dots.style.display = "inline";
+					btnText.innerHTML = "Read more"; 
+					moreText.style.display = "none";
+				  } else {
+					dots.style.display = "none";
+					btnText.innerHTML = "Read less"; 
+					moreText.style.display = "inline";
+				  }
+				}
+			</script>
+			<script>
+				function myFunction() {
+				  var dots = document.getElementById("dots-for-moreUno");
+				  var moreText = document.getElementById("uno");
+				  var btnText = document.getElementById("myReadMoreBtnUno");
+				
+				  if (dots.style.display === "none") {
+					dots.style.display = "inline";
+					btnText.innerHTML = "Read more"; 
+					moreText.style.display = "none";
+				  } else {
+					dots.style.display = "none";
+					btnText.innerHTML = "Read less"; 
+					moreText.style.display = "inline";
+				  }
+				}
+			</script>
+			<script>
+				function myFunction() {
+				  var dots = document.getElementById("dots-for-moreDuo");
+				  var moreText = document.getElementById("duo");
+				  var btnText = document.getElementById("myReadMoreBtnDuo");
+				
+				  if (dots.style.display === "none") {
+					dots.style.display = "inline";
+					btnText.innerHTML = "Read more"; 
+					moreText.style.display = "none";
+				  } else {
+					dots.style.display = "none";
+					btnText.innerHTML = "Read less"; 
+					moreText.style.display = "inline";
+				  }
+				}
+			</script>
 			<div class="our-blog">
 				<h1 class="our-blogs-title">Our Blogs</h1>
 				<div class="row">
@@ -72,8 +123,10 @@
 							<h3><a href="#">Learn Software Engineering</a></h3>
 							<p class="text-of-blog">Kitty ipsum dolor sit amet, 
 								shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-								 hairball run catnip eat the grass sniff.</p>
-							<p ><a href="#" class="read-more">Read More</a></p>	
+								 hairball run catnip eat the grass sniff.<span id="dots-for-more">...</span><span id="read-more">ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
+									hairball run catnip eat the grass sniff.</span> 
+								 </p>
+							<p ><a href="#" class="read-more" onclick="myFunction()" id="myReadMoreBtn">Read More</a></p>	
 							<span><a href="#"><i class="far fa-thumbs-up"></i>50</a></span> 
 							<span><a href="#"><i class="far fa-comments"></i>20</a></span>
 							<span><a href="#"><i class="fas fa-question"></i>20</a></span>
@@ -88,8 +141,10 @@
 							<h3><a href="#">Learn Software Engineering</a></h3>
 							<p class="text-of-blog">Kitty ipsum dolor sit amet, 
 								shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-								 hairball run catnip eat the grass sniff.</p>
-							<p ><a href="#" class="read-more">Read More</a></p>	
+								 hairball run catnip eat the grass sniff.<span id="dots-for-moreUno">...</span><span id="uno">ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
+									hairball run catnip eat the grass sniff.</span> 
+								 </p>
+							<p ><a href="#" class="read-more" onclick="myFunction()" id="myReadMoreBtnUno">Read More</a></p>	
 							<span><a href="#"><i class="far fa-thumbs-up"></i>50</a></span> 
 							<span><a href="#"><i class="far fa-comments"></i>20</a></span>
 							<span><a href="#"><i class="fas fa-question"></i>20</a></span>
@@ -104,8 +159,10 @@
 							<h3><a href="#">Learn Software Engineering</a></h3>
 							<p class="text-of-blog">Kitty ipsum dolor sit amet, 
 								shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-								 hairball run catnip eat the grass sniff.</p>
-							<p ><a href="#" class="read-more">Read More</a></p>	
+								 hairball run catnip eat the grass sniff.<span id="dots-for-moreDuo">...</span><span id="duo">ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
+									hairball run catnip eat the grass sniff.</span> 
+								 </p>
+							<p ><a href="#" class="read-more" onclick="myFunction()" id="myReadMoreBtnDuo">Read More</a></p>	
 							<span><a href="#"><i class="far fa-thumbs-up"></i>50</a></span> 
 							<span><a href="#"><i class="far fa-comments"></i>20</a></span>
 							<span><a href="#"><i class="fas fa-question"></i>20</a></span>
