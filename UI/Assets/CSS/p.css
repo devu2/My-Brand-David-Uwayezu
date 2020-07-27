@@ -3,10 +3,59 @@
 	padding: 0;
 }
 body{
-	background-color: white;
-	margin-left: 90px;
+	/* background-color: white; */
+	margin: 0;
+	padding: 0;
 }
-.navs ul {
+#admin-header{
+	margin-left: 90px;
+	width: 100%;
+	height: 200px;
+	background-color: peru;
+	color: black;
+}
+#admin-header p{
+	text-align: center;
+	margin-top: 10px;
+	font-size: 34px;
+	font-weight: 900;
+}
+#admin-siderbar{
+	margin-left: 90px;
+	width: 300px;
+	height: 400px;
+	float: left;
+	background-color: cornflowerblue;
+	color: white;
+
+}
+#blogs{
+	margin-left: 90px;
+	height: 700px;
+	background-color: turquoise;
+}
+#admin-logo{
+	border-radius: 50%;
+	width: 7%;
+	margin-top: 15px;
+	cursor: pointer;
+}
+#admin-siderbar ul li{
+	padding: 30px;
+	border-bottom: 3px solid whitesmoke;
+}
+@media screen and (max-width: 600px){
+	#admin-header, #blogs{
+		width: 300px;
+	}
+	#admin-header p{
+		font-size: 14px;
+		text-align: center;
+		margin-top: 50px;
+	}
+}
+
+/* .navs ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -40,4 +89,4 @@ body{
   }
   .navs ul li:last-child {
 	border-right: none;
-  }
+  } */
