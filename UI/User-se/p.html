@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="../Assets/CSS/index.css">
-	
-	<script src="https://kit.fontawesome.com/de5b2b25e1.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User settings</title>
+    <link rel="stylesheet" type="text/css" href="../Assets/CSS/index.css">
+	<link rel="stylesheet" type="text/css" href="../Assets/CSS/p.css">
+	<link rel="stylesheet" type="text/css" href="../Assets/CSS/blog.css">
+    <script src="https://kit.fontawesome.com/de5b2b25e1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	
-	<main>
-		<div>
-			<a href="../Blog-Page/blog.html"><p id="wall">Wall </p></a>	 
-			
-		</div>
+    <main>
+        
+		
 		
 		<div class="sider-bar " id="icons">
 			<header><a href="../Landing-page/index.html"><img src="../Assets/Images/Capture.JPG" width="90px"></a></header>
@@ -37,36 +36,34 @@
 				</ul>
 			</div>
 		</div>
-		
-		<!-- landing page section -->
-		<section class="intro landing-page" id="home">
-			
-			
-			<div class="container">
-				<div class="column">
-					<div class="introductions">
-						
-						<div class="block">
-							
-							<h1 class="white-color">Hi,</h1>
-							<h1 class="white-color">I'm <span class="span-one">d</span>avid,</h1>
-							<h3 class="white-color">Software Engineer.</h3>
-							<div>
-								<a href="../Contact-Me-Page/contact.html" class="anchor">Contact Me</a>
-
-							</div>
-							
-						</div ><img src="../Assets/Images/Capture1.JPG" alt="" class="rain"></div>
-						
-					
-				</div>
+        <section>
+            <div>
+				<a href="../Blog-Page/blog.html"><p id="wall">Wall </p></a>	 
 				
 			</div>
-			
-		</section>
-
-
-	</main>
-	
+            
+			<div class="navs" id="my-navs">
+				<a href="../Blog-Page/signup.html" class="active">Personal Information</a>
+				<a href="../Blog-Page/signin.html" >Create Article</a>
+				<a href="#" >Update article</a>
+				<a href="#">Delete Article</a>
+				
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				  <i class="fa fa-bars"></i>
+				</a>
+			</div>
+			<script>
+				function myFunction() {
+				  var x = document.getElementById("my-navs");
+				  if (x.className === "navs") {
+					x.className += " responsive";
+				  } else {
+					x.className = "navs";
+				  }
+				}
+			</script>
+        </section>
+    </main>
+    
 </body>
 </html>

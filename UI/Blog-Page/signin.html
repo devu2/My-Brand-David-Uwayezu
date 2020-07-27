@@ -1,21 +1,13 @@
 <!DOCTYPE html>
-<html lang="eng">
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Contact Me</title>
-	
+<html>
+<head><title>Sign In</title>
 	<link rel="stylesheet" type="text/css" href="../Assets/CSS/index.css">
-	<link rel="stylesheet" type="text/css" href="../Assets/CSS/contact.css">
+	<link rel="stylesheet" type="text/css" href="../Assets/CSS/signin.css">
 	<script src="https://kit.fontawesome.com/de5b2b25e1.js" crossorigin="anonymous"></script>
-
 </head>
 <body>
 	<main>
 		<section>
-			<div>
-				<a href="../Blog-Page/blog.html"><p id="wall">Wall </p></a>	 
-				
-			</div>
 			<div class="sider-bar " id="icons">
 				<header><a href="../Landing-page/index.html"><img src="../Assets/Images/Capture.JPG" width="90px"></a></header>
 				<ul>
@@ -37,28 +29,29 @@
 					</ul>
 				</div>
 			</div>
-			
-			
-		
-			
-			<div class="contact-Me">
+			<div>
+				<a href="../Blog-Page/blog.html"><p id="wall">Wall </p></a>	 
 				
-				<h1>Contact me</h1>
-				<p>If you feel you have a request regarding software engineering, </p>
-				<p> don’t hesitate to contact me using below form either</p>
-				<form class="contact-form">
-					<label><input type="text" name="name" placeholder="Name" class="name" ></label>
-					<label><input type="email" name="email" placeholder="Email" class="email" required></label><br>
-					<label><input type="text" name="subject" placeholder="Subject" class="subject"></label><br>
-					<textarea placeholder="Message" required></textarea><br>
-					<button class="button">Send</button>
+			</div>
+			<div class="sign-in">
+				<h1>Login</h1>
+				
+				
+				<form class="sign-in-form">
+					<div>
+						<i class="fas fa-user user"></i>
+					
+					<input type="text" name="username" placeholder="Username" required>
+					</div>
+					
+					<div>
+						<i class="fas fa-lock lock"></i>
+						<input type="password" name="password" placeholder="Password" required>
+					</div>
+					<input type="submit" value="Signin">
 
 				</form>
-
 			</div>
-
-
-			
 		</section>
 	</main>
 

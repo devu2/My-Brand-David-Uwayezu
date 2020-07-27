@@ -1,0 +1,65 @@
+*{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body{
+    background-image: url(../Images/cover1.jpg);
+    background-size: cover;
+}
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.sign-up{
+    
+    max-width: 600px;
+    background-color: #181717;
+    box-sizing: border-box;
+    /* margin: auto; */
+    color: white;
+    margin-top: 100px;
+    /* display: block; */
+    margin-left: 400px;
+    padding: 50px;
+    position: fixed;
+}
+input[type=text], input[type=email], input[type=password]{
+    background-color: #181717;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-bottom: 1px solid white;
+    width: 100%;
+}
+input[type=submit]{
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #138AF8;
+    color: white;
+    cursor: pointer;
+    padding: 15px 0;
+}
+input[type=submit]:hover{
+    background-color: yellowgreen;
+}
+.signin{
+    color: blue;
+}
+.signin:hover{
+    background-color: #138AF8;
+    color: white;
+}
+@media (max-width: 1200px){
+    .sign-up{
+        margin-left: 100px;
+    }
+
+}
