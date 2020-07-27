@@ -1,57 +1,170 @@
-.section-title{
-	flex: 0 0 100%;
-	max-width: 100%;
-	margin-bottom: 40px;
-
-}
-.section-title h1{
-	display: inline-block;
-	font-size: 35px;
-	text-transform: uppercase;
-	font-weight: 700;
-	margin: 0px 0px 5px;
-	color: #000000;
-	position: relative;
-}
-.section-title h1::before{
-	content: '';
-	left: 0;
-	height: 2px;
-	background-color: #947109;
-	bottom: 0px;
-	right: 30%;
-	position: absolute;
+body{
+	height: 100%;
 }
 
 .my-work{
-	background-color: #286352;
+	background-color: #10251f;
+	/* height: 100; */
 	color: orange;
 	margin-left: 100px;
-    /* float: right; */
+	text-align: center;
+	/* float: right; */
+	padding: 100px 15px;
     
 }
 
-.portfolio{
-	display: grid;
-	grid-template-columns: repeat(auto,minmax(600px,1fr));
-
-}
-
-.portfolio__item{
+.my-work .filters{
 	
-	overflow: hidden;
+	flex: 0 0 100%;
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+.my-work .filters ul{
+	text-align: center;
+	padding: 0;
 
 }
-
-.portfolio__image{
-	transition: 
-		transform 0.8s cubic-bezier(.5, 0, .5,1),
-		opacity 0.25s linear;
-	width: 100%;	
-
+@media (max-width:1200px){
+	.my-work{
+		height: 100vh;
+	}
+}
+.my-work .filters li{
+	display: inline-block;
+	color: white;
+	text-transform: uppercase;
+	margin: 0px 10px;
+	font-family: 600;
+	padding-bottom: 0px;
+	cursor: pointer;
+	font-size: 16px;
+}
+.my-work .filters li.active{
+	color: lightblue;
+	border-bottom: 3px solid lightblue;
+}
+.my-work .gallery{
+	flex: 0 0 100%;
+	max-width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	/* justify-content: space-between; */
 }
 
-.portfolio__image:hover{
-	transform: scale(1.2);
-	opacity: .25;
+.my-work .gallery .item{
+	flex: 0 0 33.33%;
+	max-width: 33.33%;
+	/* margin-bottom: 15px; */
+	position: relative;
+	padding: 8px;
+
+}
+.my-work .gallery .item .inner{
+	position: relative;
+}
+.my-work .gallery .item img{
+	width: 100%;
+	display: block;
+}
+.my-work .gallery .item .overlay{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 10;
+	display: none;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.my-work .gallery .item:hover .overlay{
+	display: flex;
+}
+.my-work .gallery .item .overlay h3{
+	color: white;
+	font-weight: 600;
+	font-size: 25px;
+	margin-top: 15px;
+	animation: galleryText 0.5s ease;
+
+}
+.my-work .gallery .item:hover .overlay h3{
+	animation: galleryText 0.5s ease;
+
+}
+.my-work .gallery .item .overlay .fa{
+	animation: galleryIcon 0.5s ease;
+	cursor: pointer;
+	background-color: orange;
+	color: white;
+	height: 50px;
+	width: 50px;
+	text-align: center;
+	line-height: 50px;
+	display: inline-block;
+	border-radius: 50%;
+}
+.my-work .gallery .item:hover .overlay .fa{
+	animation: galleryIcon 0.5s ease;
+
+}
+@keyframes galleryIcon{
+	0%{
+		transform: translateY(-20px);opacity: 0;
+	}
+	100%{
+		transform: translateY(0);opacity: 1;
+	}
+}
+@keyframes galleryText{
+	0%{
+		transform: translateY(20px);opacity: 0;
+	}
+	100%{
+		transform: translateY(0);opacity: 1;
+	}
+}
+
+.plus-icons{
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+	display: none;
+	justify-content: center;
+	align-items: center;
+
+}
+.plus-icons.show{
+	display: flex;
+	
+}
+.plus-icons.hide{
+	display: none;
+
+}
+.plus-icons .close-lightbox{
+	height: 35px;
+	width: 35px;
+	background-color: white;
+	color: orange;
+	text-align: center;
+	line-height: 35px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+	border-radius: 50%;
+	z-index: 101;
+}
+
+.plus-icons img{
+	max-width: 90%;
+	max-height: 80%;
+	display: block;
 }
