@@ -8,7 +8,7 @@
     <title>User settings</title>
     <link rel="stylesheet" type="text/css" href="../Assets/CSS/index.css">
 	<link rel="stylesheet" type="text/css" href="../Assets/CSS/p.css">
-	<link rel="stylesheet" type="text/css" href="../Assets/CSS/blog.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../Assets/CSS/blog.css"> -->
     <script src="https://kit.fontawesome.com/de5b2b25e1.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -49,16 +49,28 @@
 					</center>	
 				</div>
 				<div id="admin-siderbar">
+					
 					<ul>
-						<li class="active">Personal Information</li>
-						<li>View Articles</li>
-						<li>Create Article</li>
-						<li>Edit Articles</li>
-						<li>Delete Articles</li>
+						<li class="active"><a href="../User-se/p.html">Personal Information</a></li>
+						<li><a href="../Blog-Page/blog.html">View Articles</a></li>
+						<li><a href="#">Create Article</a></li>
+						
+						
 					</ul>
 				</div>
-				<div id="blogs"></div>
-            </div> 
+				<div id="blogs">
+					<center><h1>Personal Information</h1></center>
+					<h3>Names: </h3>
+					<h3>Username: </h3>
+					<h3>Password: </h3>
+					<h3>Email: </h3>
+					<h3>Blogs: </h3>
+					Notifications <label for="on"><input type="radio" name="on off">ON</label>
+					<label for="off"><input type="radio" name="on off">OFF</label><br>
+					<button>Update Profile</button>
+				</div>
+			</div> 
+			
 			
 			<script>
 				function myFunction() {

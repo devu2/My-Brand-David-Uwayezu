@@ -38,3 +38,5 @@ galleryItems.forEach(function(element){
 
     })
 })
+
+
