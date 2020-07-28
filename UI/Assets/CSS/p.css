@@ -3,41 +3,78 @@
 	padding: 0;
 }
 body{
-	background-color: white;
-	margin-left: 90px;
-}
-.navs ul {
-	list-style-type: none;
+	/* background-color: white; */
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
+}
+#admin-header{
+	margin-left: 90px;
+	width: 100%;
+	height: 200px;
+	background-color: peru;
+	color: black;
+}
+#admin-header p{
+	text-align: center;
+	margin-top: 10px;
+	font-size: 34px;
+	font-weight: 900;
+}
+#admin-siderbar{
+	margin-left: 90px;
+	width: 300px;
+	height: 400px;
 	
-  }
-  .navs ul li{
-	  float: left;
-	  /* margin-right: 100px; */
-      /* padding-left: 50px;
-	  padding-right: 50px; */
-	  padding: 10px; 
-  }
-  .navs ul li a {
-	display: block;
+	float: left;
+	background-color: cornflowerblue;
 	color: white;
-	text-align: left;
-	padding: 14px 16px;
-	text-decoration: none;
-	background-color: black;
-	float: right;
-  }
-  .navs ul li a:hover {
-	background-color: blue;
-  }
-  /* .active {
-	background-color: #4CAF50;
-  } */
-  .navs ul li {
-	border-right: 1px solid white;
-  }
-  .navs ul li:last-child {
-	border-right: none;
-  }
+
+
+}
+#admin-siderbar .toggle-btn{
+	position: absolute;
+	left: 400px;
+	top: 200px;
+	
+}
+
+#blogs{
+	margin-left: 90px;
+	height: 700px;
+	background-color: turquoise;
+	padding: 10px;
+	line-height: 50px;
+}
+@media screen and (max-width: 600px){
+	#admin-siderbar{
+		height: 200px;
+	}
+}
+
+#admin-logo{
+	border-radius: 50%;
+	width: 7%;
+	margin-top: 15px;
+	cursor: pointer;
+}
+#admin-siderbar ul li a{
+	padding: 10px;
+	border-bottom: 3px solid whitesmoke;
+	cursor: pointer;
+	line-height: 50px;
+	color: blanchedalmond;
+}
+@media screen and (max-width: 600px){
+	#admin-header, #blogs{
+		width: 300px;
+	}
+	#admin-header p{
+		font-size: 14px;
+		text-align: center;
+		margin-top: 50px;
+	}
+}
+
+
+ 
+ 

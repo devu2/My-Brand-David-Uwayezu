@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<title>Admin View</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User settings</title>
     <link rel="stylesheet" type="text/css" href="../Assets/CSS/index.css">
 	<link rel="stylesheet" type="text/css" href="../Assets/CSS/p.css">
-	<link rel="stylesheet" type="text/css" href="../Assets/CSS/blog.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../Assets/CSS/blog.css"> -->
     <script src="https://kit.fontawesome.com/de5b2b25e1.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -41,17 +42,36 @@
 				<a href="../Blog-Page/blog.html"><p id="wall">Wall </p></a>	 
 				
 			</div>
-            
-			<div class="navs" id="my-navs">
-				<a href="../Blog-Page/signup.html" class="active">Personal Information</a>
-				<a href="../Blog-Page/signin.html" >Create Article</a>
-				<a href="#" >Update article</a>
-				<a href="#">Delete Article</a>
-				
-				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-				  <i class="fa fa-bars"></i>
-				</a>
-			</div>
+			<div class="container">
+				<div id="admin-header">
+					<center><img src="../Assets/Images/images.png" alt="Admin Logo" id="admin-logo"><br>
+						<p>Welcome AdminName!</p>
+					</center>	
+				</div>
+				<div id="admin-siderbar">
+					
+					<ul>
+						<li class="active"><a href="../User-se/p.html">Personal Information</a></li>
+						<li><a href="../Blog-Page/blog.html">View Articles</a></li>
+						<li><a href="#">Create Article</a></li>
+						
+						
+					</ul>
+				</div>
+				<div id="blogs">
+					<center><h1>Personal Information</h1></center>
+					<h3>Names: </h3>
+					<h3>Username: </h3>
+					<h3>Password: </h3>
+					<h3>Email: </h3>
+					<h3>Blogs: </h3>
+					Notifications <label for="on"><input type="radio" name="on off">ON</label>
+					<label for="off"><input type="radio" name="on off">OFF</label><br>
+					<button>Update Profile</button>
+				</div>
+			</div> 
+			
+			
 			<script>
 				function myFunction() {
 				  var x = document.getElementById("my-navs");
@@ -62,7 +82,8 @@
 				  }
 				}
 			</script>
-        </section>
+		</section>
+		<script src="../work-page/work.js"></script>
     </main>
     
 </body>
