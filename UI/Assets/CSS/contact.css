@@ -10,15 +10,20 @@ body{
 	/* margin-left: 90px; */
 	
 }
-@media(max-width: 1200px){
+@media screen and (max-width: 600px){
 	body{
 		height: 100vh;
 		margin: 0;
+		overflow: auto;
 		
 	}
 	.contact-form button{
+		position: fixed;
+		margin-left: 190px;
+		margin-bottom: 80px
 		text-align: center;
-		margin-right: -250px;
+		float: left;
+		/* margin-left: 250px; */
 	}
 		
 	
@@ -60,6 +65,8 @@ h1:hover{
 
 input[type=text], textarea, input[type=email]{
 	background-color: #201D1D;
+	height: 100%;
+	overflow: auto;
 	
 }
 
@@ -95,9 +102,10 @@ textarea{
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	margin-right: 410px;
-	margin-top: 10px;
+	margin-bottom: 50px;
 	padding: 5px;
 	line-height: 10px;
+	display: block;
 
 }
 button:hover, p:hover{
@@ -107,5 +115,34 @@ button:hover, p:hover{
 button:hover{
 	background-color: #13F8CE;
 }
+.contact-form i {
+    visibility: hidden;
+    
+}
+.contact-form small{
+    visibility: hidden;
+}
+.contact-form .success{
+    border-color:  green;
+   
+}
+.contact-form .error{
+    border-color: red;
+    
+}
+.contact-form  .success i.fa-check-circle{
+    color: green;
+	visibility: visible;
+	
+}
+.contact-form  .error i.fa-exclamation-circle{
+    color: red;
+    visibility: visible;
+}
+.contact-form.error small{
+    color: red;
+    visibility: visible;
+}
 
 
+}
