@@ -1,12 +1,5 @@
-
-// const name = document.getElementById("name");
-// const email = document.getElementById("email");
-// const subject = document.getElementById("subject");
-// const message = document.getElementById("message");
 const contactForm = document.getElementById("contactForm");
-
-
-
+let isError = true;
 contactForm.addEventListener('submit',(e)=>{
     e.preventDefault();
     
@@ -14,10 +7,10 @@ contactForm.addEventListener('submit',(e)=>{
 });
 
 function checkInputs(){
-    let nameValue =name.value.trim(); 
-    let emailValue = email.value.trim(); 
-    let subjectlValue = subject.value.trim(); 
-    let messageValue = message.value.trim(); 
+    let nameValue =name.value.trim() || ''; 
+    let emailValue = email.value.trim() || ''; 
+    let subjectlValue = subject.value.trim() || ''; 
+    let messageValue = message.value.trim() || ''; 
     
     
     
@@ -52,20 +45,13 @@ function checkInputs(){
      else {
         settingSuccess(message);
     }
-    // savingContactMessage(nameValue,emailValue,subjectlValue,messageValue);
+    
     
 }
-// function savingContactMessage(nameValue,emailValue,subjectlValue,messageValue){
-//     var newContactMeMessagesRef = contactMeMessagesRef.push();
-//     newContactMeMessagesRef.set({
-//         name: nameValue,
-//         email: emailValue,
-//         subject: subjectlValue,
-//         message: messageValue
-//     });
 
-// }
 function settingErrorFor(input,message) {
+    isError = true;
+
     const form = input.parentElement;
     const small = form.querySelector('small');
 
@@ -73,9 +59,53 @@ function settingErrorFor(input,message) {
     form.className = 'contact-form error';
 }
 function settingSuccess(input) {
+    isError = false;
     const form = input.parentElement;
     form.className = 'contact-form success';
 }
 function isThisEmail(email){
     return /^(([^<>()\[\]\\.,;:\$@"]+(\.[^<>()\[\]\\.,;:\$@"]+)*)|(",+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
+
+
+
+var firebaseConfig = {
+    apiKey: "AIzaSyByzjRCzo0WCn_dJBAMOr6wYVd4yiSRv9Q",
+    authDomain: "contactmeform-ec589.firebaseapp.com",
+    databaseURL: "https://contactmeform-ec589.firebaseio.com",
+    projectId: "contactmeform-ec589",
+    storageBucket: "contactmeform-ec589.appspot.com",
+    messagingSenderId: "579388975981",
+    appId: "1:579388975981:web:0344a050e1d2e07c8a0864"
+};
+firebase.initializeApp(firebaseConfig);
+  
+var firestore = firebase.firestore();
+const sendBtn = document.querySelector('#button');
+let name = document.querySelector("#name");
+let email = document.querySelector("#email");
+let subject= document.querySelector("#subject");
+let message = document.querySelector("#message"); 
+  
+const db = firestore.collection('messages');
+  
+sendBtn.addEventListener('click',function(){
+    if(isError === false){
+      db.doc().set({
+        Name: name.value,
+        Email: email.value,
+        Subject: subject.value,
+        Message: message.value
+    
+      }).then(function(){
+        window.alert("Your message successfully reaches me, Thank you!");
+      }).catch(function(error){
+        window.alert(error);
+      });
+    } else{
+      window.alert("Please fill below information!");
+  
+    }
+    
+});
