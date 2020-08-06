@@ -13,13 +13,13 @@ h1{
     margin-bottom: 20px;
 }
 .sign-up{
-    
+    width: 50%;
     max-width: 600px;
     background-color: #181717;
     box-sizing: border-box;
     /* margin: auto; */
     color: white;
-    margin-top: 100px;
+    margin-top: 20px;
     /* display: block; */
     margin-left: 400px;
     padding: 50px;
@@ -33,6 +33,7 @@ input[type=text], input[type=email], input[type=password]{
     padding: 10px;
     border-bottom: 1px solid white;
     width: 100%;
+    color: white;
 }
 input[type=submit]{
     width: 100%;
@@ -62,4 +63,31 @@ input[type=submit]:hover{
         margin-left: 100px;
     }
 
+}
+.sign-up-form i {
+    visibility: hidden;
+    
+}
+.sign-up-form small{
+    visibility: hidden;
+}
+.sign-up-form .success{
+    border: 1px solid green;
+    border-radius: 10px;
+}
+.sign-up-form .error{
+    border: 1px solid red;
+    border-radius: 10px;
+}
+.sign-up-form  .success i.fa-check-circle{
+    color: green;
+    visibility: visible;
+}
+.sign-up-form  .error i.fa-exclamation-circle{
+    color: red;
+    visibility: visible;
+}
+.sign-up-form.error small{
+    color: red;
+    visibility: visible;
 }

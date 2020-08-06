@@ -5,15 +5,12 @@
 	<title>Blog</title>
 	<link rel="stylesheet" type="text/css" href="../Assets/CSS/index.css">
 	<link rel="stylesheet" type="text/css" href="../Assets/CSS/blog.css">
-	 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
-	<script src="https://kit.fontawesome.com/de5b2b25e1.js" crossorigin="anonymous"></script>
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-	<main>
+	
 		<section>
 			
 			<div class="sider-bar " id="icons">
@@ -38,19 +35,158 @@
 				</div>
 			</div>
 		</section>
-		<section>
-			<div>
-				<a href="../Blog-Page/blog.html"><p id="wall">Wall </p></a>	 
-				
-			</div>
-		</section>
+		
 		<section >
+			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+				<a href="" class="navbar-brand">Blog Page</a>
+				<button 
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#nabar"
+				aria-controls="nabar"
+				arial-expanded="false"
+				aria-label="Toggle navigation"
+
+				><span class="navbar-toggler-icon"></span></button>
+				<div class="collapse navbar-collapse" id="nabar">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a href="../Blog-Page/blog.html" class="nav-link">All Post</a>
+						</li>
+						<li class="nav-item">
+							<a href="../Blog-Page/signup.html" class="nav-link" >Sign Up</a>
+						</li>
+						<li class="nav-item">
+							<a href="../Blog-Page/signin.html"  class="nav-link">Sign In</a>
+						</li>
+						<li class="nav-item">
+							<a href="../Blog-Page/create.html" class="nav-link">Create Post</a>
+						</li>
+						<li class="nav-item">
+							<a href="../User-se/p.html"><i class="far fa-user-circle" class="nav-link"></i></a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			
+			<main role="main">
+				<div class="jumbotron">
+					<div class="container">
+						<div class="our-blog">
+							<h1 class="our-blogs-title">Our Blogs</h1>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="one-blog">
+										<p class="blog-owner">By Owner <span>July 24, 2020</span></p>
+										<img src="../Assets/Images/cover1.jpg" alt="">
+										<h3><a href="../Blog-Page/page1.html">Learn Software Engineering</a></h3>
+										<p class="text-of-blog">Kitty ipsum dolor sit amet, 
+											shed everywhere shed everywhere stretching attack your ankles chase the red dot,
+											 hairball run catnip eat the grass sniff.<span id="dots-for-more">...</span><span id="read-more">ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
+												hairball run catnip eat the grass sniff.</span> 
+										</p>
+										<a href="../Blog-Page/page1.html" class="read-more" onclick="myFunction()" id="myReadMoreBtn">Read More</a>
+										<a href="../Blog-Page/edit.html" class="btn btn-primary a-btn-slide-text">
+											<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+											<span><strong>Edit</strong></span>            
+										</a>	
+										<button onclick="document.getElementById('id01').style.display='block'">Delete</button>
+
+										<div id="id01" class="modal">
+											<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+											<form class="modal-content" >
+												<div class="container">
+												<h1>Delete Blog</h1>
+												<p>Are you sure you want to delete your blog?</p>
+
+												<div class="clearfix">
+													<button type="button" class="cancelbtn">Cancel</button>
+													<button type="button" class="deletebtn">Delete</button>
+												</div>
+												</div>
+											</form>
+										</div>
+										<span><a href="#"><i class="far fa-thumbs-up"></i>50</a></span> 
+										<span><a href="../Blog-Page/comment.html"><i class="far fa-comments"></i>20</a></span>
+										
+			
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="one-blog">
+										<p class="blog-owner">By Owner <span>July 24, 2020</span></p>
+										<img src="../Assets/Images/cover1.jpg" alt="">
+										<h3><a href="../Blog-Page/page1.html">Learn Software Engineering</a></h3>
+										<p class="text-of-blog">Kitty ipsum dolor sit amet, 
+											shed everywhere shed everywhere stretching attack your ankles chase the red dot,
+											 hairball run catnip eat the grass sniff.<span id="dots-for-moreUno">...</span><span id="uno">ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
+												hairball run catnip eat the grass sniff.</span> 
+										</p>
+										<a href="../Blog-Page/page1.html" class="read-more" onclick="myFunction()" id="myReadMoreBtnUno">Read More</a>
+										<a href="../Blog-Page/edit.html" class="btn btn-primary a-btn-slide-text">
+											<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+											<span><strong>Edit</strong></span>            
+										</a>	
+										<a href="#" class="btn btn-primary a-btn-slide-text">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+											 <span><strong>Delete</strong></span>            
+										 </a>
+										<span><a href="#"><i class="far fa-thumbs-up"></i>50</a></span> 
+										<span><a href="../Blog-Page/comment.html"><i class="far fa-comments"></i>20</a></span>
+										
+			
+			
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="one-blog">
+										<p class="blog-owner">By Owner <span>July 24, 2020</span></p>
+										<img src="../Assets/Images/cover1.jpg" alt="">
+										<h3><a href="../Blog-Page/page1.html">Learn Software Engineering</a></h3>
+										<p class="text-of-blog">Kitty ipsum dolor sit amet, 
+											shed everywhere shed everywhere stretching attack your ankles chase the red dot,
+											 hairball run catnip eat the grass sniff.<span id="dots-for-moreDuo">...</span><span id="duo">ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
+												hairball run catnip eat the grass sniff.</span> 
+										</p>
+										<a href="../Blog-Page/page1.html" class="read-more btn btn-primary btn-lg" onclick="myFunction()" id="myReadMoreBtnDuo">Read More &raquo;</a>
+										<a href="../Blog-Page/edit.html" class="btn btn-primary a-btn-slide-text">
+											<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+											<span><strong>Edit</strong></span>            
+										</a>	
+										<a href="#" class="btn btn-primary a-btn-slide-text">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+											 <span><strong>Delete</strong></span>            
+										 </a>
+										
+										<span><a href="#"><i class="far fa-thumbs-up"></i>50</a></span> 
+										<span><a href="../Blog-Page/comment.html"><i class="far fa-comments"></i>20</a></span>
+										
+			
+			
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<div class="container">
+					<div class="row" id="posts-collection">
+						<hr>
+					</div>
+					
+				</div>
+				
+			</main>
+			
 			<div class="navs" id="my-navs">
-				<a href="../Blog-Page/signup.html" >Sign Up</a>
-				<a href="../Blog-Page/signin.html" >Sign In</a>
-				<a href="#" class="active">Recent Post</a>
-				<a href="#">Latest Post</a>
-				<a href="../User-se/p.html"><i class="far fa-user-circle"></i></a>
+				
+				
+				
+				
+				
 				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 				  <i class="fa fa-bars"></i>
 				</a>
@@ -64,143 +200,32 @@
 					x.className = "navs";
 				  }
 				}
+				
 			</script>
-			<!-- <script>
-				function myFunction() {
-				  var dots = document.getElementById("dots-for-more");
-				  var moreText = document.getElementById("read-more");
-				  var btnText = document.getElementById("myReadMoreBtn");
+			<script>
+				// Get the modal
+				var modal = document.getElementById('id01');
 				
-				  if (dots.style.display === "none") {
-					dots.style.display = "inline";
-					btnText.innerHTML = "Read more"; 
-					moreText.style.display = "none";
-				  } else {
-					dots.style.display = "none";
-					btnText.innerHTML = "Read less"; 
-					moreText.style.display = "inline";
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+				  if (event.target == modal) {
+					modal.style.display = "none";
 				  }
 				}
-			</script> -->
-			<!-- <script>
-				function myFunction() {
-				  var dots = document.getElementById("dots-for-moreUno");
-				  var moreText = document.getElementById("uno");
-				  var btnText = document.getElementById("myReadMoreBtnUno");
-				
-				  if (dots.style.display === "none") {
-					dots.style.display = "inline";
-					btnText.innerHTML = "Read more"; 
-					moreText.style.display = "none";
-				  } else {
-					dots.style.display = "none";
-					btnText.innerHTML = "Read less"; 
-					moreText.style.display = "inline";
-				  }
-				}
-			</script> -->
-			<!-- <script>
-				function myFunction() {
-				  var dots = document.getElementById("dots-for-moreDuo");
-				  var moreText = document.getElementById("duo");
-				  var btnText = document.getElementById("myReadMoreBtnDuo");
-				
-				  if (dots.style.display === "none") {
-					dots.style.display = "inline";
-					btnText.innerHTML = "Read more"; 
-					moreText.style.display = "none";
-				  } else {
-					dots.style.display = "none";
-					btnText.innerHTML = "Read less"; 
-					moreText.style.display = "inline";
-				  }
-				}
-			</script> -->
-			<div class="our-blog">
-				<h1 class="our-blogs-title">Our Blogs</h1>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="one-blog">
-							<p class="blog-owner">By Owner <span>July 24, 2020</span></p>
-							<img src="../Assets/Images/cover1.jpg" alt="">
-							<h3><a href="../Blog-Page/page1.html">Learn Software Engineering</a></h3>
-							<p class="text-of-blog">Kitty ipsum dolor sit amet, 
-								shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-								 hairball run catnip eat the grass sniff.<span id="dots-for-more">...</span><span id="read-more">ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-									hairball run catnip eat the grass sniff.</span> 
-							</p>
-							<a href="../Blog-Page/page1.html" class="read-more" onclick="myFunction()" id="myReadMoreBtn">Read More</a>
-							<a href="../Blog-Page/edit.html" class="btn btn-primary a-btn-slide-text">
-								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-								<span><strong>Edit</strong></span>            
-							</a>	
-							<a href="#" class="btn btn-primary a-btn-slide-text">
-								<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-								 <span><strong>Delete</strong></span>            
-							 </a>
-							<span><a href="#"><i class="far fa-thumbs-up"></i>50</a></span> 
-							<span><a href="../Blog-Page/comment.html"><i class="far fa-comments"></i>20</a></span>
-							
-
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="one-blog">
-							<p class="blog-owner">By Owner <span>July 24, 2020</span></p>
-							<img src="../Assets/Images/cover1.jpg" alt="">
-							<h3><a href="../Blog-Page/page1.html">Learn Software Engineering</a></h3>
-							<p class="text-of-blog">Kitty ipsum dolor sit amet, 
-								shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-								 hairball run catnip eat the grass sniff.<span id="dots-for-moreUno">...</span><span id="uno">ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-									hairball run catnip eat the grass sniff.</span> 
-							</p>
-							<a href="../Blog-Page/page1.html" class="read-more" onclick="myFunction()" id="myReadMoreBtnUno">Read More</a>
-							<a href="../Blog-Page/edit.html" class="btn btn-primary a-btn-slide-text">
-								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-								<span><strong>Edit</strong></span>            
-							</a>	
-							<a href="#" class="btn btn-primary a-btn-slide-text">
-								<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-								 <span><strong>Delete</strong></span>            
-							 </a>
-							<span><a href="#"><i class="far fa-thumbs-up"></i>50</a></span> 
-							<span><a href="../Blog-Page/comment.html"><i class="far fa-comments"></i>20</a></span>
-							
+			</script>
+			
 
 
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="one-blog">
-							<p class="blog-owner">By Owner <span>July 24, 2020</span></p>
-							<img src="../Assets/Images/cover1.jpg" alt="">
-							<h3><a href="../Blog-Page/page1.html">Learn Software Engineering</a></h3>
-							<p class="text-of-blog">Kitty ipsum dolor sit amet, 
-								shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-								 hairball run catnip eat the grass sniff.<span id="dots-for-moreDuo">...</span><span id="duo">ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-									hairball run catnip eat the grass sniff.</span> 
-							</p>
-							<a href="../Blog-Page/page1.html" class="read-more" onclick="myFunction()" id="myReadMoreBtnDuo">Read More</a>
-							<a href="../Blog-Page/edit.html" class="btn btn-primary a-btn-slide-text">
-								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-								<span><strong>Edit</strong></span>            
-							</a>	
-							<a href="#" class="btn btn-primary a-btn-slide-text">
-								<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-								 <span><strong>Delete</strong></span>            
-							 </a>
-							
-							<span><a href="#"><i class="far fa-thumbs-up"></i>50</a></span> 
-							<span><a href="../Blog-Page/comment.html"><i class="far fa-comments"></i>20</a></span>
-							
-
-
-						</div>
-					</div>
-				</div>
-			</div>
 		</section>
-	</main>
+	
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+	<script src="https://kit.fontawesome.com/de5b2b25e1.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="blog.js"></script>
 
 </body>
 </html>

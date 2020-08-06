@@ -37,7 +37,7 @@
 				</ul>
 			</div>
 		</div>
-        <section>
+        <section id="personal">
             <div>
 				<a href="../Blog-Page/blog.html"><p id="wall">Wall </p></a>	 
 				
@@ -53,7 +53,7 @@
 					<ul>
 						<li class="active"><a href="../User-se/p.html">Personal Information</a></li>
 						<li><a href="../Blog-Page/blog.html">View Articles</a></li>
-						<li><a href="#">Create Article</a></li>
+						<li><a href="../Blog-Page/create.html">Create Article</a></li>
 						
 						
 					</ul>
@@ -82,9 +82,17 @@
 				  }
 				}
 			</script>
+			
+			<script src="../work-page/work.js"></script>
 		</section>
-		<script src="../work-page/work.js"></script>
+		
     </main>
-    
+    <script>
+		firebase.auth().onAuthStateChanged(function(user){
+			if(!user){
+				window.location.href="../Blog-Page/signin.html";
+			}
+		});
+	</script>
 </body>
 </html>

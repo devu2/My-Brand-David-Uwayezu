@@ -25,7 +25,7 @@ h1{
     padding: 50px;
     position: fixed;
 }
-input[type=text], input[type=password]{
+input[type=email], input[type=password]{
     background-color: #275E8F;
     box-sizing: border-box;
     font-size: 24px;
@@ -39,7 +39,7 @@ input[type=text], input[type=password]{
     margin-bottom: 20px;
     
 }  
-input[type=text]{
+input[type=email]{
     margin-top: 50px;
 }  
 

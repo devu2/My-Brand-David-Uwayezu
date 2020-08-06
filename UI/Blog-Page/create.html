@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create blog</title>
+    <link rel="stylesheet" type="text/css" href="../Assets/CSS/index.css">
+    <link rel="stylesheet" href="../Assets/CSS/blog.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+</head>
+<body >
+    <section>
+			
+        <div class="sider-bar " id="icons">
+            <header><a href="../Landing-page/index.html"><img src="../Assets/Images/Capture.JPG" width="90px"></a></header>
+            <ul>
+                <li><a href="../Landing-page/index.html" ><i class="fas fa-home icon active"></i>Home</a></li>
+                <li><a href="../About-Me-Page/about.html"><i class="fa fa-fw fa-user icon"></i>About</a></li>
+                <li><a href="../Skills-page/skills.html"><i class="fas fa-cog icon"></i>Skills</a></li>
+                <li><a href="../work-page/work.html"><i class="fa fa-fw fa-wrench icon"></i>Works</a></li>
+                <li><a href="../Contact-Me-Page/contact.html"><i class="far fa-envelope icon"></i>Contact</a></li>
+                <li><a href="../Blog-Page/blog.html"><i class="fas fa-blog icon"></i>Blogs</a></li>
+                
+            </ul>
+            <div class="social-links">
+                <ul>
+                    <li><a href="https://www.instagram.com/david_uwayezu/?hl=en" target="_blank" ><i  class="fa fa-instagram  start-social-links"></i>Instagram</a></li>
+                    <li><a href="https://web.facebook.com/david.uwayezu" target="_blank"><i  class="fa fa-facebook "></i>Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/in/david-uwayezu-77b94b145/" target="_blank" ><i  class="fa fa-linkedin "></i>Linkedin</a></li>
+                    <li><a href="" target="_blank" ><i class="fa fa-twitter "></i>Twitter</a></li>
+                    <li><a href="https://github.com/devu2" target="_blank" ><i  class="fa fa-github  end-social-links"></i>Github</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a href="" class="navbar-brand">Blog Page</a>
+        <button 
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#nabar"
+        aria-controls="nabar"
+        arial-expanded="false"
+        aria-label="Toggle navigation"
+
+        ><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="nabar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a href="../Blog-Page/blog.html" class="nav-link">All Post</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Blog-Page/signup.html" class="nav-link" >Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Blog-Page/signin.html"  class="nav-link">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Blog-Page/create.html" class="nav-link active">Create Post</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../User-se/p.html"><i class="far fa-user-circle" class="nav-link"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main role="main">
+        <div class="container">
+            <div class="card m-4">
+                <div class="card-body">
+                    <h2 class="pt-4">Create Blog</h2>
+                    <div class="form-group">
+                        <label for="Author">Author</label>
+                        <input type="text" id="author" placeholder="Author" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Blog Title">Blog Title</label>
+                        <input type="text" id="blogTitle" placeholder="Blog Title" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Image">Image</label>
+                        <input type="file" id="image" placeholder="Image" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Blog Content">Blog Content</label>
+                        <textarea  id="blogContent" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="Date">Date</label>
+                        <input type="date" id="blogDate"  class="form-control">
+                    </div>
+                    <div class="form-group">
+                        
+                        <input type="submit" id="submitBlogBtn" value="Create"  class="btn btn-primary">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+	<script src="https://kit.fontawesome.com/de5b2b25e1.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="blog.js"></script>
+    <script src="create.js"></script>
+
+</body>
+
+
+
+</html>
