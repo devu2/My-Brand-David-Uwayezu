@@ -3,9 +3,16 @@
 <head><title>Sign In</title>
 	<link rel="stylesheet" type="text/css" href="../Assets/CSS/index.css">
 	<link rel="stylesheet" type="text/css" href="../Assets/CSS/signin.css">
+	<link rel="stylesheet" href="../Assets/CSS/p.css">
 	<script src="https://kit.fontawesome.com/de5b2b25e1.js" crossorigin="anonymous"></script>
+	<!-- <script defer src="signin.js"></script> -->
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	
+	
+
 </head>
 <body>
+	
 	<main>
 		<section>
 			<div class="sider-bar " id="icons">
@@ -37,23 +44,71 @@
 				<h1>Login</h1>
 				
 				
-				<form class="sign-in-form">
-					<div>
-						<i class="fas fa-user user"></i>
-					
-					<input type="text" name="username" placeholder="Username" required>
+				<form class="sign-in-form" id="signInForm" >
+					<div id="logedin">	
+						<div>
+							<i class="fas fa-user user"></i>
+						
+							<input type="email"  placeholder="Email" id="email" >
+							<!-- <div id="email_error">Invalid Email!</div> -->
+
+						</div>
+						
+						<div>
+							<i class="fas fa-lock lock"></i>
+							<input type="password"  placeholder="Password" id="password" >
+							<!-- <div id="passwordError">Invalid Password!</div> -->
+
+						</div>
+						<input type="submit" value="Signin"  id="signInBtn">
+						<div>
+							<span class="text-muted">forgot</span>
+							<a href="../Blog-Page/forgetUsernameOrPassword.html" class="text-dark">
+							username/password?</a>
+						</div>
+						<p>Not have an account? <a href="../Blog-Page/signup.html" class="signup">SignUp</a></p>
 					</div>
-					
-					<div>
-						<i class="fas fa-lock lock"></i>
-						<input type="password" name="password" placeholder="Password" required>
-					</div>
-					<input type="submit" value="Signin">
 
 				</form>
+			</div>	
+			
+						
+					
+					
+					<script>
+						function myFunction() {
+							var x = document.getElementById("my-navs");
+							if (x.className === "navs") {
+							x.className += " responsive";
+							} else {
+								x.className = "navs";
+							}
+						}
+					</script>
+				</div>
+					
+				
 			</div>
+			
+			
+			
+			<!-- <script src="../work-page/work.js"></script> -->
 		</section>
 	</main>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-storage.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>	
+<script src="blog.js"></script>
+<script src="signin.js"></script>
+<script>
+	firebase.auth().onAuthStateChanged(function(user){
+		if(user){
+			window.location.href = "../Blog-Page/blog.html";
+		}
+	});
+</script>
 
 </body>
 </html>

@@ -1,0 +1,24 @@
+{
+  "name": "my-brand-david-uwayezu",
+  "version": "1.0.0",
+  "description": "This is my brand portfolio website",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devu2/My-Brand-David-Uwayezu.git"
+  },
+  "author": "David Uwayezu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devu2/My-Brand-David-Uwayezu/issues"
+  },
+  "homepage": "https://github.com/devu2/My-Brand-David-Uwayezu#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.6",
+    "nodemon": "^2.0.4"
+  }
+}
