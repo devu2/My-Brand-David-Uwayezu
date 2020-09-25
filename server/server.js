@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const blogRoutes = require('./routes/blogRoutes');
-const queriesRoutes = require('./routes/queriesRoutes')
+const routes = require('./routes');
 
 
 const app = express();
@@ -10,7 +9,7 @@ mongoose.connect('mongodb://localhost/myBrandDavid',{ useNewUrlParser: true, use
     console.log('Connected')
 })
 app.use(express.json());
-app.use(blogRoutes);
-app.use(queriesRoutes)
+app.use(routes);
+
 
 app.listen(5500);
