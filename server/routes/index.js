@@ -4,8 +4,8 @@ const router = express.Router();
 const blogRoutes = require('../routes/blogRoutes');
 const queriesRoutes = require('../routes/queriesRoutes');
 
-router.use('/blogs',blogRoutes);
-router.use('/queries',queriesRoutes)
+router.use('/api/blogs',blogRoutes);
+router.use('/api/queries',queriesRoutes)
 
 
 module.exports = router;
