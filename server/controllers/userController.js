@@ -1,12 +1,15 @@
 const User = require("../models/user");
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const {authSchema} = require('../helpers/validation_schema')
 
 exports.createUser = (req, res) => {
+    const {error} = authSchema.validate(req.body);
+    if(error) return res.status(400).send(error.details[0].message);
     const hash = bcrypt.hashSync(req.body.password,12);
     User.create({...req.body,password : hash})
     .then(() => {
-      res.status(200).json({
+      res.status(201).json({
         message: "You Successfully created a user!",
       });
     })
@@ -87,6 +90,12 @@ exports.deleteUser = (req, res) => {
 exports.login = (req, res) => {
     User.findOne({ email: req.body.email })
       .then((user) => {
+          if(!user){
+            return res.status(401).json({
+              message:'User not found!'
+            });
+          }
+          
           const isValid = bcrypt.compareSync(req.body.password,user.password)
           if(isValid){
               const token = jwt.sign({
@@ -115,4 +124,9 @@ exports.login = (req, res) => {
           error,
         });
       });
+  };
+
+  exports.signout = (req, res) => {
+    req.signout();
+    res.send({ status: 200, message: "You logged out successfully!" });
   };
