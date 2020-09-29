@@ -11,6 +11,8 @@ router.use('/api/queries',queriesRoutes);
 router.use('/api/users',userRoutes);
 router.use('/api/user/signin',userRoutes);
 router.use('/api/user/update',userRoutes)
+router.use('/api/user/signout',userRoutes)
+
 
 
 module.exports = router;

@@ -1,6 +1,10 @@
+const { postSchema } = require("../helpers/posts");
 const Blog = require("../models/blogs");
+const postsSchema = require('../helpers/posts').postSchema;
 
 exports.createBlog = (req, res) => {
+  const {error} = postsSchema.validate(req.body);
+  if(error) return res.status(400).send(error.details[0].message);
   Blog.create(req.body)
     .then(() => {
       res.status(200).json({
