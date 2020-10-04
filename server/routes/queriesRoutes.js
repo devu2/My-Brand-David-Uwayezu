@@ -4,7 +4,7 @@ const queriesControllers = require("../controllers/queriesController");
 const checkAuth = require('../middlewares/auth');
 
 router.post("/", queriesControllers.createQuery);
-router.get("/", queriesControllers.getAllQueries);
+router.get("/", checkAuth,queriesControllers.getAllQueries);
 router.get("/:queryId", queriesControllers.getSingleQuery);
 router.delete("/:queryId",checkAuth, queriesControllers.deleteQuery);
 

@@ -10,7 +10,8 @@ const routes = require('./routes');
 
 
 const app = express();
-mongoose.connect('mongodb://localhost/myBrandDavid',{ useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+
+mongoose.connect(process.env.NODE_ENV==='test'?process.env.MONGO_URL_TEST: process.env.MONGO_URL,{ useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
 .then(()=>{
     console.log('database Connected successfully!')
 })
@@ -21,3 +22,4 @@ app.use(routes);
 
 
 app.listen(5500);
+module.exports = app;

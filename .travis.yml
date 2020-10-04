@@ -1,0 +1,18 @@
+sudo: false
+language: node_js
+env:
+  - MONGO_URL_TEST=mongodb://localhost/myBrandDavidTest
+node_js:
+  - "stable"
+services:
+  - mongodb
+cache:
+  npm: false
+notifications:
+  email: false
+script:
+  - npm ci
+  - npm run coverage
+  
+after_success:
+  - npm run coveralls
