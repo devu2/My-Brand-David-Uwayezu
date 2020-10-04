@@ -5,7 +5,7 @@ const {authSchema} = require('../helpers/validation_schema')
 
 exports.createUser = (req, res) => {
     const {error} = authSchema.validate(req.body);
-    if(error) return res.status(400).send(error.details[0].message);
+    if(error) return res.status(400).json({status:400,error:error.details[0].message});
     const hash = bcrypt.hashSync(req.body.password,12);
     User.create({...req.body,password : hash})
     .then(() => {
@@ -61,6 +61,7 @@ exports.updateUser= (req, res) => {
         res.status(200).json({
           message: "user Updated Successfully!",
           user,
+          status:200
         });
       })
       .catch((error) => {
@@ -72,17 +73,19 @@ exports.updateUser= (req, res) => {
   };
 
 exports.deleteUser = (req, res) => {
-  User.findByIdAndDelete({ _id: req.params.queryId })
+  User.findOneAndDelete({ _id: req.params.userId })
     .then((user) => {
       res.status(200).json({
         message: "User deleted successfully!",
         user,
+        status:200
       });
     })
     .catch((error) => {
       res.status(404).json({
         message: "Deleting a user failed!",
         error,
+        status:404
       });
     });
 };
@@ -91,7 +94,7 @@ exports.login = (req, res) => {
     User.findOne({ email: req.body.email })
       .then((user) => {
           if(!user){
-            return res.status(401).json({
+            return res.status(404).json({
               message:'User not found!'
             });
           }

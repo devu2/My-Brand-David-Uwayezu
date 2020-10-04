@@ -3,11 +3,12 @@ const {queriesSchema} = require('../helpers/queries');
 
 exports.createQuery = (req, res) => {
   const {error} = queriesSchema.validate(req.body);
-    if(error) return res.status(400).send(error.details[0].message);
+    if(error) return res.status(400).json({message: error.details[0].message});
   Query.create(req.body)
     .then(() => {
       res.status(200).json({
         message: "You Successfully created a query!",
+        status:200
       });
     })
     .catch((error) => {

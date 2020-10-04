@@ -15,7 +15,7 @@ const queriesSchema= joi.object({
       .max(255)
       .required(),
     message: joi.string()
-        .min(120) 
+        .min(10) 
         .required() 
 
       

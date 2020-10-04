@@ -6,9 +6,10 @@ exports.createBlog = (req, res) => {
   const {error} = postsSchema.validate(req.body);
   if(error) return res.status(400).send(error.details[0].message);
   Blog.create(req.body)
-    .then(() => {
+    .then((blog) => {
       res.status(200).json({
         message: "You Successfully created a blog!",
+        blog
       });
     })
     .catch((error) => {
@@ -58,6 +59,7 @@ exports.updateBlog = (req, res) => {
     .then((blog) => {
       res.status(200).json({
         message: "Blog Updated Successfully!",
+        status:200,
         blog,
       });
     })

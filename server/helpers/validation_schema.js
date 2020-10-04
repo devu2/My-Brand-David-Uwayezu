@@ -13,7 +13,16 @@ const authSchema= joi.object({
     password: joi.string()
       .min(8)
       .required()
-      .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$'))
+      .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
+    country: joi.string()
+        .max(30)
+        .required(),
+        
+
+    city: joi.string()
+        .max(30)
+        
+        .required()     
   });
 
   module.exports = {authSchema}
