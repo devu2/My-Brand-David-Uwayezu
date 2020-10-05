@@ -1,8 +1,8 @@
-const { postSchema } = require("../helpers/posts");
-const Blog = require("../models/blogs");
-const postsSchema = require('../helpers/posts').postSchema;
+import { postSchema } from "../helpers/posts";
+import Blog from "../models/blogs";
+import { postSchema as postsSchema } from '../helpers/posts';
 
-exports.createBlog = (req, res) => {
+export function createBlog(req, res) {
   const {error} = postsSchema.validate(req.body);
   if(error) return res.status(400).send(error.details[0].message);
   Blog.create(req.body)
@@ -18,9 +18,9 @@ exports.createBlog = (req, res) => {
         error,
       });
     });
-};
+}
 
-exports.blogsGet = (req, res) => {
+export function blogsGet(req, res) {
   Blog.find()
     .then((blogs) => {
       res.status(200).json({
@@ -34,9 +34,9 @@ exports.blogsGet = (req, res) => {
         error,
       });
     });
-};
+}
 
-exports.getSingleBlog = (req, res) => {
+export function getSingleBlog(req, res) {
   Blog.findById(req.params.blogId)
     .then((blog) => {
       res.status(200).json({
@@ -50,8 +50,8 @@ exports.getSingleBlog = (req, res) => {
         error,
       });
     });
-};
-exports.updateBlog = (req, res) => {
+}
+export function updateBlog(req, res) {
   Blog.findOneAndUpdate({ _id: req.params.blogId }, req.body, {
     new: true,
     runValidators: true,
@@ -69,9 +69,9 @@ exports.updateBlog = (req, res) => {
         error,
       });
     });
-};
+}
 
-exports.deleteBlog = (req, res) => {
+export function deleteBlog(req, res) {
   Blog.findByIdAndDelete({ _id: req.params.blogId })
     .then((blog) => {
       res.status(200).json({
@@ -85,4 +85,4 @@ exports.deleteBlog = (req, res) => {
         error,
       });
     });
-};
+}

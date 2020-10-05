@@ -1,10 +1,10 @@
-const {expect} = require('chai');
-const jwt = require('jsonwebtoken');
-const app = require('../server');
-const request = require('supertest');
-const {it,afterEach,describe,beforeEach} = require('mocha');
-const Blog = require('../models/blogs');
-const User = require('../models/user');
+import { expect } from 'chai';
+import { sign } from 'jsonwebtoken';
+import app from '../server';
+import request from 'supertest';
+import { it, afterEach, describe, beforeEach } from 'mocha';
+import Blog from '../models/blogs';
+import User from '../models/user';
 
 describe('blog tests', ()=>{
     afterEach(async()=>{
@@ -13,7 +13,7 @@ describe('blog tests', ()=>{
     beforeEach(async()=>{
       await Blog.deleteMany({});
   });
-  const fakeToken = jwt.sign({email: 'dec@gmail.com',userId:'ok'},process.env.JWT_SECRET)
+  const fakeToken = sign({email: 'dec@gmail.com',userId:'ok'},process.env.JWT_SECRET)
     
     it('Should get all blogs',async()=>{
         const res = await request(app).get('/api/blogs')

@@ -1,7 +1,7 @@
-const Query = require("../models/queries");
-const {queriesSchema} = require('../helpers/queries');
+import Query from "../models/queries";
+import { queriesSchema } from '../helpers/queries';
 
-exports.createQuery = (req, res) => {
+export function createQuery(req, res) {
   const {error} = queriesSchema.validate(req.body);
     if(error) return res.status(400).json({message: error.details[0].message});
   Query.create(req.body)
@@ -17,9 +17,9 @@ exports.createQuery = (req, res) => {
         error,
       });
     });
-};
+}
 
-exports.getAllQueries = (req, res) => {
+export function getAllQueries(req, res) {
   Query.find()
     .then((queries) => {
       res.status(200).json({
@@ -33,9 +33,9 @@ exports.getAllQueries = (req, res) => {
         error,
       });
     });
-};
+}
 
-exports.getSingleQuery = (req, res) => {
+export function getSingleQuery(req, res) {
   Query.findById(req.params.queryId)
     .then((query) => {
       res.status(200).json({
@@ -49,9 +49,9 @@ exports.getSingleQuery = (req, res) => {
         error,
       });
     });
-};
+}
 
-exports.deleteQuery = (req, res) => {
+export function deleteQuery(req, res) {
   Query.findByIdAndDelete({ _id: req.params.queryId })
     .then((query) => {
       res.status(200).json({
@@ -65,4 +65,4 @@ exports.deleteQuery = (req, res) => {
         error,
       });
     });
-};
+}

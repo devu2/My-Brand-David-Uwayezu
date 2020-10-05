@@ -4,11 +4,12 @@
   "description": "This is my brand portfolio website",
   "main": "server.js",
   "scripts": {
-    "start": "node server/server.js",
-    "start:dev": "nodemon server/server.js",
-    "test": "cross-env NODE_ENV=test mocha server/test/**.test.js --exit --timeout 15000",
+    "start": "node build/server.js",
+    "start:dev": "nodemon --exec babel-node server/server.js",
+    "test": "cross-env NODE_ENV=test mocha server/test/**.test.js --require @babel/register --exit --timeout 15000",
     "coverage": "nyc --reporter=html --reporter=text  npm test",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "build": "babel ./server --out-dir build"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,12 @@
   },
   "homepage": "https://github.com/devu2/My-Brand-David-Uwayezu#readme",
   "dependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/polyfill": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
     "@hapi/joi": "^17.1.1",
     "bcrypt": "^5.0.0",
     "chai": "^4.2.0",

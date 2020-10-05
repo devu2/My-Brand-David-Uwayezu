@@ -1,7 +1,7 @@
-const joi = require('joi');
+import joi from 'joi';
 
 
-const postSchema= joi.object({
+export const postSchema= joi.object({
     title: joi.string()
       .min(6)
       .required(),
@@ -11,4 +11,4 @@ const postSchema= joi.object({
     
   });
 
-  module.exports = {postSchema}
+  

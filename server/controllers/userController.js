@@ -1,9 +1,9 @@
-const User = require("../models/user");
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const {authSchema} = require('../helpers/validation_schema')
+import User from "../models/user";
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
+import {authSchema} from '../helpers/validation_schema';
 
-exports.createUser = (req, res) => {
+export const createUser = (req, res) => {
     const {error} = authSchema.validate(req.body);
     if(error) return res.status(400).json({status:400,error:error.details[0].message});
     const hash = bcrypt.hashSync(req.body.password,12);
@@ -21,7 +21,7 @@ exports.createUser = (req, res) => {
     })
 };
 
-exports.getAllUsers= (req, res) => {
+export const getAllUsers= (req, res) => {
   User.find()
     .then((users) => {
       res.status(200).json({
@@ -37,7 +37,7 @@ exports.getAllUsers= (req, res) => {
     });
 };
 
-exports.getOneUser = (req, res) => {
+export const getOneUser = (req, res) => {
   User.findById(req.params.userId)
     .then((user) => {
       res.status(200).json({
@@ -52,7 +52,7 @@ exports.getOneUser = (req, res) => {
       });
     });
 };
-exports.updateUser= (req, res) => {
+export const updateUser= (req, res) => {
     User.findOneAndUpdate({ _id: req.params.userId }, req.body, {
       new: true,
       runValidators: true,
@@ -72,7 +72,7 @@ exports.updateUser= (req, res) => {
       });
   };
 
-exports.deleteUser = (req, res) => {
+  export const deleteUser = (req, res) => {
   User.findOneAndDelete({ _id: req.params.userId })
     .then((user) => {
       res.status(200).json({
@@ -90,7 +90,7 @@ exports.deleteUser = (req, res) => {
     });
 };
 
-exports.login = (req, res) => {
+export const login = (req, res) => {
     User.findOne({ email: req.body.email })
       .then((user) => {
           if(!user){
@@ -129,7 +129,7 @@ exports.login = (req, res) => {
       });
   };
 
-  exports.signout = (req, res) => {
+  export const signout = (req, res) => {
     req.signout();
     res.send({ status: 200, message: "You logged out successfully!" });
   };
