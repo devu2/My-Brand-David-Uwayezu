@@ -1,12 +1,12 @@
-const dotenv = require("dotenv");
+import dotenv from "dotenv";
 dotenv.config();
-const jwtStrategy = require("./config/passport");
-const passport = require("passport");
-const express = require("express");
-const mongoose = require("mongoose");
-const routes = require("./routes");
-const swagger = require("swagger-ui-express");
-const docs = require("../swagger.json");
+import jwtStrategy from "./config/passport";
+import passport from "passport";
+import express from "express";
+import mongoose from "mongoose";
+import routes from "./routes";
+import swagger from "swagger-ui-express";
+import docs from "../swagger.json";
 
 const app = express();
 

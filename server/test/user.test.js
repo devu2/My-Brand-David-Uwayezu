@@ -1,15 +1,15 @@
-const {expect} = require('chai');
-const chai = require("chai");
-const app = require('../server');
-const request = require('supertest');
-const {it,afterEach,describe,beforeEach} = require('mocha');
-const User= require('../models/user');
+import { expect } from 'chai';
+import chai from "chai";
+import app from '../server';
+import request from 'supertest';
+import { it, afterEach, describe, beforeEach } from 'mocha';
+import User from '../models/user';
 
 
 
 describe("api/users", () => {
   afterEach(async () => {
-    await User.deleteMany({});
+    await  User.deleteMany({});
     
   });
   beforeEach(async()=>{
@@ -70,7 +70,7 @@ describe("api/users", () => {
           country:"Rwanda",
           city:"Kibuye"
         });
-      // console.log(res.body);
+      
       expect(res.status).to.equal(201);
       expect(res.body).to.have.property("message",'You Successfully created a user!' );
       

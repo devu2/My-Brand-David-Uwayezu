@@ -1,11 +1,11 @@
-const express = require("express");
-const router = express.Router();
-const queriesControllers = require("../controllers/queriesController");
-const checkAuth = require('../middlewares/auth');
+import { Router } from "express";
+const router = Router();
+import { createQuery, getAllQueries, getSingleQuery, deleteQuery } from "../controllers/queriesController";
+import checkAuth from '../middlewares/auth';
 
-router.post("/", queriesControllers.createQuery);
-router.get("/", checkAuth,queriesControllers.getAllQueries);
-router.get("/:queryId", queriesControllers.getSingleQuery);
-router.delete("/:queryId",checkAuth, queriesControllers.deleteQuery);
+router.post("/", createQuery);
+router.get("/", checkAuth,getAllQueries);
+router.get("/:queryId", getSingleQuery);
+router.delete("/:queryId",checkAuth, deleteQuery);
 
-module.exports = router;
+export default router;

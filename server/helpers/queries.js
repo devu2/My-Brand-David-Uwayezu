@@ -1,7 +1,7 @@
-const joi = require('joi');
+import joi from 'joi';
 
 
-const queriesSchema= joi.object({
+export const queriesSchema= joi.object({
     name: joi.string()
       .min(4)
       .max(255)
@@ -21,4 +21,4 @@ const queriesSchema= joi.object({
       
   });
 
-  module.exports = {queriesSchema}
+  

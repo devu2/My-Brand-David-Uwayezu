@@ -1,15 +1,15 @@
-const express = require('express');
-const router = express.Router();
-const blogControllers = require('../controllers/blogController');
-const checkAuth = require('../middlewares/auth');
+import { Router } from 'express';
+const router = Router();
+import { createBlog, blogsGet, getSingleBlog, updateBlog, deleteBlog } from '../controllers/blogController';
+import checkAuth from '../middlewares/auth';
 
 
-router.post('/',checkAuth,blogControllers.createBlog);
-router.get('/',blogControllers.blogsGet);
-router.get('/:blogId',blogControllers.getSingleBlog);
-router.patch('/:blogId',checkAuth,blogControllers.updateBlog);
-router.delete('/:blogId',checkAuth,blogControllers.deleteBlog)
+router.post('/',checkAuth,createBlog);
+router.get('/',blogsGet);
+router.get('/:blogId',getSingleBlog);
+router.patch('/:blogId',checkAuth,updateBlog);
+router.delete('/:blogId',checkAuth,deleteBlog)
 
 
 
-module.exports = router;
+export default router;

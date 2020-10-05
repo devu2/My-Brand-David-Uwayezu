@@ -1,7 +1,7 @@
-const joi = require('joi');
+import joi from 'joi';
 
 
-const authSchema= joi.object({
+export const authSchema= joi.object({
     name: joi.string()
       .min(6)
       .required(),
@@ -25,5 +25,5 @@ const authSchema= joi.object({
         .required()     
   });
 
-  module.exports = {authSchema}
+ 
   

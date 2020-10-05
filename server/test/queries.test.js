@@ -1,9 +1,9 @@
-const {expect} = require('chai');
-const jwt = require('jsonwebtoken');
-const app = require('../server');
-const request = require('supertest');
-const {it,afterEach,describe,beforeEach} = require('mocha');
-const Query = require('../models/queries');
+import { expect } from 'chai';
+import { sign } from 'jsonwebtoken';
+import app from '../server';
+import request from 'supertest';
+import { it, afterEach, describe, beforeEach } from 'mocha';
+import Query from '../models/queries';
 
 
 describe('Queries Test',()=>{
@@ -42,7 +42,7 @@ describe('Queries Test',()=>{
 
     describe('GET /api/queries',()=>{
         it('Should get all queries while you are admin',async()=>{
-            const fakeToken = jwt.sign({email: 'dec@gmail.com',userId:'ok'},process.env.JWT_SECRET)
+            const fakeToken = sign({email: 'dec@gmail.com',userId:'ok'},process.env.JWT_SECRET)
             const query = await Query.create({name:'david',email:"david3@gmail.com",subject:"greetings hkhkjk",message:"Hello there!"});
             await query.save();
             const res = await request(app).get('/api/queries').set('authorization', `Bearer ${fakeToken}`)

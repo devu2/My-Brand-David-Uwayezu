@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+import { Schema, model } from "mongoose";
 
-const querySchema = mongoose.Schema({
+const querySchema = Schema({
   name: {
     type: String,
     required: true,
@@ -21,4 +21,4 @@ const querySchema = mongoose.Schema({
 {timestamps: true}
 );
 
-module.exports = mongoose.model("Query", querySchema);
+export default model("Query", querySchema);

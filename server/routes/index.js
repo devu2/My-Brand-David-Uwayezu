@@ -1,19 +1,16 @@
-const express = require('express');
+import { Router } from 'express';
 
-const router = express.Router();
-const blogRoutes = require('../routes/blogRoutes');
-const queriesRoutes = require('../routes/queriesRoutes');
-const userRoutes = require('../routes/userRoutes');
+const router = Router();
+import blogRoutes from '../routes/blogRoutes';
+import queriesRoutes from '../routes/queriesRoutes';
+import userRoutes from '../routes/userRoutes';
 
 
 router.use('/api/blogs',blogRoutes);
 router.use('/api/queries',queriesRoutes);
 router.use('/api/users',userRoutes);
-// router
-// router.use('/api/user/signin',userRoutes);
-// router.use('/api/user/update',userRoutes)
-// router.use('/api/user/signout',userRoutes)
 
 
 
-module.exports = router;
+
+export default router;
