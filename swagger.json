@@ -1,0 +1,599 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "1.0.0",
+    "title": "David",
+    "contact": {
+      "email": "daviduwayezu400@gmail.com"
+    }
+  },
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "users",
+      "description": "Operations related to authentication"
+    },
+    {
+      "name": "Blogs",
+      "description": "Knowledge sharing and fun"
+    },
+    {
+      "name": "Queries",
+      "description": "Contact form queries from users"
+    }
+  ],
+  "schemes": ["http", "https"],
+  "paths": {
+    "/queries": {
+      "post": {
+        "tags": ["Queries"],
+        "summary": "Create a query from contact form",
+        "description": "",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Queries"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully created"
+          },
+          "400": {
+            "description": "Invalid Input"
+          },
+          "404": {
+            "description": "Unable to create query"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Queries"],
+        "summary": "Fetch all queries",
+        "description": "",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Queries successfully retrieved",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Queries"
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid Token supplied"
+          }
+        }
+      }
+    },
+    "/queries/{queryId}": {
+      "get": {
+        "tags": ["Queries"],
+        "summary": "Fetch a query",
+        "description": "",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "queryId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+
+        "responses": {
+          "200": {
+            "description": "Query successfully retrieved",
+            "schema": {
+              "$ref": "#/definitions/Queries"
+            }
+          },
+          "401": {
+            "description": "Invalid Token supplied"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Queries"],
+        "summary": "Delete a query",
+        "description": "",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "queryId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+
+        "responses": {
+          "200": {
+            "description": "Query successfully deleted",
+            "schema": {
+              "$ref": "#/definitions/Queries"
+            }
+          },
+          "401": {
+            "description": "Invalid Token supplied"
+          }
+        }
+      }
+    },
+
+    "/blogs": {
+      "get": {
+        "tags": ["Blogs"],
+        "summary": "Find all Blog posts",
+        "description": " ",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "successfully retrieved",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Blogs"
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid Token supplied"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Blogs"],
+        "summary": "Create a blog | Performed by Admin only ",
+        "description": " ",
+
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Blogs"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Created Successfully",
+            "schema": {
+              "$ref": "#/definitions/Blogs"
+            }
+          },
+          "401": {
+            "description": "Invalid Token supplied"
+          },
+          "404": {
+            "description": "Blog not created!"
+          }
+        }
+      }
+    },
+    "/blogs/{blogId}": {
+      "get": {
+        "tags": ["Blogs"],
+        "summary": "Find Blog by ID",
+        "description": " ",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "blogId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful retrieved",
+            "schema": {
+              "$ref": "#/definitions/Blogs"
+            }
+          },
+          "401": {
+            "description": "Invalid Token supplied"
+          },
+          "404": {
+            "description": "Blog not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Blogs"],
+        "summary": "Delete blog | Performed by Admin only ",
+        "description": " ",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "blogId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted Successfully"
+          },
+          "401": {
+            "description": "Invalid Token supplied"
+          },
+          "404": {
+            "description": "Blog not found"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Blogs"],
+        "summary": "Update blog title or body | Performed by Admin only",
+        "description": "",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "blogId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Blogs"
+            },
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Blog updated successfully"
+          },
+          "400": {
+            "description": "Invalid Input"
+          },
+          "401": {
+            "description": "Invalid Token supplied"
+          },
+          "403": {
+            "description": "Access denied, Admin only can update blog"
+          },
+          "404": {
+            "description": "Blog not found"
+          }
+        }
+      }
+    },
+    "/users/signin": {
+      "post": {
+        "tags": ["users"],
+        "summary": "Login a user with email & password",
+        "description": "",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Login"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Login successfully"
+          },
+          "400": {
+            "description": "Wrong credentials (password)"
+          },
+          "404": {
+            "description": "Wrong credentials (email)"
+          }
+        }
+      }
+    },
+
+    "/users/signup": {
+      "post": {
+        "tags": ["users"],
+        "summary": "Signup user",
+        "description": "Provide proper information to create account",
+        "operationId": "registerUser",
+
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Signup"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User created successfully ",
+            "schema": {
+              "$ref": "#/definitions/Signup"
+            }
+          },
+          "400": {
+            "description": "Operation failed"
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": ["users"],
+        "summary": "Find all users posts",
+        "description": " ",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "successfully retrieved",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Signup"
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid Token supplied"
+          }
+        }
+      }
+    },
+    "/users/{userId}": {
+      "get": {
+        "tags": ["users"],
+        "summary": "Find user by ID",
+        "description": " ",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful retrieved",
+            "schema": {
+              "$ref": "#/definitions/Signup"
+            }
+          },
+          "401": {
+            "description": "Invalid Token supplied"
+          },
+          "404": {
+            "description": "user not found"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["users"],
+        "summary": "Update user fields | Performed by Admin only",
+        "description": "",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Signup"
+            },
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "user updated successfully"
+          },
+          "400": {
+            "description": "Invalid Input"
+          },
+          "401": {
+            "description": "Invalid Token supplied"
+          },
+          "403": {
+            "description": "Access denied, Admin only can update user"
+          },
+          "404": {
+            "description": "user not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["users"],
+        "summary": "Delete user | Performed by Admin only ",
+        "description": " ",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted Successfully"
+          },
+          "401": {
+            "description": "Invalid Token supplied"
+          },
+          "404": {
+            "description": "user not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Blogs": {
+      "type": "object",
+      "required": ["title", "body"],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Blogs"
+      }
+    },
+    "Signup": {
+      "type": "object",
+      "required": ["name", "email", "password"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Signup"
+      }
+    },
+
+    "Queries": {
+      "type": "object",
+      "required": ["name", "email", "message"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+
+      "xml": {
+        "name": "Queries"
+      }
+    },
+    "Login": {
+      "type": "object",
+      "required": ["email", "password"],
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    }
+  },
+
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
