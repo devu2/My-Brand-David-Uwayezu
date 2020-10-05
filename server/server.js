@@ -26,5 +26,5 @@ app.use(express.json());
 app.use(routes);
 app.use("/api-docs", swagger.serve, swagger.setup(docs));
 
-app.listen(5500);
+app.listen(process.env.PORT || 5500);
 module.exports = app;
